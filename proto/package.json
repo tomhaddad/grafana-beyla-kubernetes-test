@@ -1,0 +1,19 @@
+{
+  "name": "proto",
+  "version": "0.0.1",
+  "scripts": {
+    "clean": "rm -rf dist && rm -rf gen",
+    "lint": "buf lint && npm run breaking",
+    "gen": "buf generate --include-imports --include-wkt -o gen",
+    "prebuild": "npm run clean && mkdir -p dist && npm run gen",
+    "build": "tsc && buf build -o dist/image.binpb --disable-symlinks"
+  },
+  "devDependencies": {
+    "@bufbuild/buf": "^1.29.0",
+    "@bufbuild/protobuf": "^1.6.0",
+    "@bufbuild/protoc-gen-es": "^1.7.2",
+    "nice-grpc-common": "^2.0.2",
+    "ts-proto": "^1.167.3",
+    "typescript": "~5.3.3"
+  }
+}

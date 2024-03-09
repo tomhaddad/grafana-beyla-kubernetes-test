@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package node.v1;
+
+service NodeGrpcService {
+  rpc Forward(ForwardRequest) returns (ForwardResponse) {}
+  rpc Receive(ReceiveRequest) returns (ReceiveResponse) {}
+}
+
+message ReceiveRequest {
+  string message = 1;
+}
+
+message ReceiveResponse {
+  string message = 1;
+}
+
+message ForwardRequest {
+  string to = 1;
+  string message = 2;
+}
+
+message ForwardResponse {
+  string message = 1;
+}

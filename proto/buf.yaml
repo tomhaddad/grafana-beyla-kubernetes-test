@@ -1,0 +1,13 @@
+version: v1
+name: buf.build/tomhaddad/grafana-beyla-kubernetes-test
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
+  except:
+    - RPC_REQUEST_RESPONSE_UNIQUE
+    - RPC_RESPONSE_STANDARD_NAME
+build:
+  excludes: [node_modules]

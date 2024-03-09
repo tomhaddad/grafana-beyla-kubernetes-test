@@ -1,0 +1,26 @@
+version: v1
+managed:
+  enabled: true
+  optimize_for: SPEED
+  go_package_prefix:
+    default: github.com/tomhaddad/grafana-beyla-kubernetes-test/proto/gen/go
+plugins:
+  - name: ts
+    out: ts
+    strategy: all
+    path: ./node_modules/ts-proto/protoc-gen-ts_proto
+    opt:
+      - outputServices=nice-grpc
+      - outputServices=generic-definitions
+      - useExactTypes=false
+      - esModuleInterop=true
+      - env=node
+      - stringEnums=true
+  - plugin: buf.build/protocolbuffers/go
+    out: go
+    opt: paths=source_relative
+  - plugin: buf.build/grpc/go
+    out: go
+    opt:
+      - paths=source_relative
+      - require_unimplemented_servers=false
