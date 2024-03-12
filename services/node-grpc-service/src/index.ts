@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { Server, createServer } from 'nice-grpc';
 import { pino } from 'pino';
-import { NodeGrpcServiceDefinition } from 'proto/dist/node/v1/node';
+import { NodeGrpcServiceDefinition } from 'demo-proto/dist/node/v1/node';
 import { forward, receive } from './handlers';
 
 export const logger = pino({

@@ -1,4 +1,4 @@
-import { ForwardRequest, ForwardResponse, ReceiveRequest, ReceiveResponse } from 'proto/dist/node/v1/node';
+import { ForwardRequest, ForwardResponse, ReceiveRequest, ReceiveResponse } from 'demo-proto/dist/node/v1/node';
 
 export const receive = async (request: ReceiveRequest): Promise<ReceiveResponse> => {
   return {

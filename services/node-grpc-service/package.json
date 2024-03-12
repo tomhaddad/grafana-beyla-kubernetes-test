@@ -13,18 +13,11 @@
     "build": "tsc",
     "lint": "eslint --ext .ts --max-warnings 0 src/",
     "lint:fix": "npm run lint -- --fix",
-    "dev": "nodemon",
+    "dev": "tsx src/index.ts",
     "start": "node dist/index.js",
     "test": "node --test"
   },
   "author": "Tom Haddad",
-  "nodemonConfig": {
-    "watch": [
-      "src"
-    ],
-    "ext": "ts",
-    "exec": "ts-node src/index.ts"
-  },
   "dependencies": {
     "dotenv": "~16.4.1",
     "nice-grpc": "~2.1.7",
@@ -35,13 +28,13 @@
     "@types/node": "~20.11.16",
     "@typescript-eslint/eslint-plugin": "~6.20.0",
     "@typescript-eslint/parser": "~6.20.0",
+    "demo-proto": "file:../../proto",
     "eslint": "~8.56.0",
     "eslint-config-prettier": "~9.1.0",
     "eslint-plugin-prettier": "~5.1.3",
-    "nodemon": "~3.0.3",
-    "proto": "file:../../proto",
     "prettier": "~3.2.5",
     "ts-node": "~10.9.2",
+    "tsx": "^4.7.1",
     "typescript": "~5.3.3"
   }
 }

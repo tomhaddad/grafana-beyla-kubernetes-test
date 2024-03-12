@@ -1,0 +1,1 @@
+`docker build -t node-grpc-service -f services/node-grpc-service/Dockerfile .`
