@@ -1,0 +1,33 @@
+{
+    "include": ["src/**/*", "tsconfig.json"],
+    "compilerOptions": {
+      "lib": ["ES2022"],
+      "target": "es2022",
+      "module": "commonJS",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "declaration": true,
+      "pretty": true,
+      "stripInternal": true,
+      "strict": true,
+      "noImplicitReturns": true,
+      "noImplicitOverride": true,
+      "noUnusedLocals": true,
+      "noUncheckedIndexedAccess": true,
+      "noPropertyAccessFromIndexSignature": true,
+      "noEmitOnError": true,
+      "useDefineForClassFields": true,
+      "forceConsistentCasingInFileNames": true,
+      "skipLibCheck": true,
+      "outDir": "dist"
+    },
+    "ts-node": {
+      "transpileOnly": true,
+      "files": true,
+      "experimentalResolver": true,
+      "experimentalSpecifierResolution": "node",
+      "esm": true
+    }
+}
+    

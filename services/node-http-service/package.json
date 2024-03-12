@@ -1,0 +1,45 @@
+{
+  "name": "node-http-service",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "engines": {
+    "npm": ">=10",
+    "node": ">=20"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "test": "NODE_ENV=test LOG_LEVEL=silent jest --silent",
+    "lint": "eslint --max-warnings 0 src",
+    "lint:fix": "npm run lint -- --fix",
+    "dev": "tsx src/index.ts",
+    "start": "npm run build && node dist/src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "~16.3.1",
+    "fastify": "~4.25.2",
+    "nice-grpc": "^2.1.8",
+    "pino-pretty": "^10.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "~20.11.26",
+    "@typescript-eslint/eslint-plugin": "~5.55.0",
+    "@typescript-eslint/parser": "~5.55.0",
+    "demo-proto": "file:../../proto",
+    "eslint": "~8.57.0",
+    "eslint-config-prettier": "~9.1.0",
+    "eslint-plugin-import": "~2.29.1",
+    "eslint-plugin-prettier": "~4.2.1",
+    "nodemon": "~3.0.1",
+    "prettier": "~2.8.4",
+    "ts-node": "~10.9.1",
+    "tsx": "^4.7.1",
+    "typescript": "~5.3.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "rootDir": "./src"
+  }
+}
