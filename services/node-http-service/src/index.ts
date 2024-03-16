@@ -1,7 +1,6 @@
 import 'dotenv/config';
 import Fastify, { FastifyInstance, FastifyRequest } from 'fastify';
 import { nodeGrpcClient } from './clients/node';
-import { goGrpcClient } from './clients/grpc';
 
 export const app: FastifyInstance = Fastify({
   logger: {
@@ -31,10 +30,6 @@ app.post(
     try {
       const { serviceName } = request.params;
       switch (serviceName) {
-        case 'go-grpc-service':
-          app.log.info('Received request for go-http-service');
-          await goGrpcClient.forward({ message: request.body.message });
-          return { status: 'success' };
         case 'node-grpc-service':
           app.log.info('Received request for node-http-service');
           await nodeGrpcClient.receive({ message: request.body.message });

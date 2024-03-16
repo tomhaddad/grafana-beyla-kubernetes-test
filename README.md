@@ -2,7 +2,7 @@
 
 Testing out Grafana Beyla, with the following:
 
-- Go gRPC service
+- 2x Go HTTP services
 - NodeJS gRPC service
 - NodeJS HTTP service
 

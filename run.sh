@@ -1,7 +1,5 @@
 #!/bin/bash
 source .env
-docker build -t go-grpc-service -f services/go-grpc-service/Dockerfile .
-docker build -t go-grpc-service-2 -f services/go-grpc-service-2/Dockerfile .
 docker build -t go-http-forwarder-service -f services/go-http-forwarder-service/Dockerfile .
 docker build -t go-http-receiver-service -f services/go-http-receiver-service/Dockerfile .
 docker build -t node-grpc-service -f services/node-grpc-service/Dockerfile .
