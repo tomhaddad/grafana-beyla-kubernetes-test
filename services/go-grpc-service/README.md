@@ -1,1 +1,0 @@
-`docker build -t go-grpc-service -f services/go-grpc-service/Dockerfile .`

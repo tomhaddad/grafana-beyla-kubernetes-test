@@ -1,1 +1,0 @@
-`docker build -t node-http-service -f services/node-http-service/Dockerfile .`
