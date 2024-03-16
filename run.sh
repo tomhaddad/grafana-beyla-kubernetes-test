@@ -7,4 +7,4 @@ kind load docker-image go-grpc-service --name=$CLUSTER_NAME
 kind load docker-image node-grpc-service --name=$CLUSTER_NAME
 kind load docker-image node-http-service --name=$CLUSTER_NAME
 kubectl apply -f ./kubernetes
-envsubst < ./kubernetes/beyla/config.yaml | kubectl apply -f ./kubernetes/beyla
+kubectl apply -f ./kubernetes/beyla

@@ -3,5 +3,5 @@ import { GoGrpcServiceClient, GoGrpcServiceDefinition } from 'demo-proto/dist/go
 
 export const goGrpcClient: GoGrpcServiceClient = createClientFactory().create(
   GoGrpcServiceDefinition,
-  createChannel(`${process.env['GO_SERVICE_HOST'] ?? 'go-grpc-service'}`),
+  createChannel(`${process.env['GO_SERVICE_HOST'] ?? 'go-grpc-service:8080'}`),
 );

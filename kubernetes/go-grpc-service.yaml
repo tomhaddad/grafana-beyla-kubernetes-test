@@ -18,7 +18,7 @@ spec:
         imagePullPolicy: Never
         ports:
         - name: http
-          containerPort: 8000
+          containerPort: 8080
           protocol: TCP
         resources:
           requests:
@@ -40,6 +40,6 @@ spec:
     name: go-grpc-service
   ports:
     - name: http
-      port: 8000
-      targetPort: 8000
+      port: 8080
+      targetPort: 8080
       protocol: TCP

@@ -3,5 +3,5 @@ import { NodeGrpcServiceClient, NodeGrpcServiceDefinition } from 'demo-proto/dis
 
 export const nodeGrpcClient: NodeGrpcServiceClient = createClientFactory().create(
   NodeGrpcServiceDefinition,
-  createChannel(`${process.env['NODE_SERVICE_HOST'] ?? 'node-grpc-service'}`),
+  createChannel(`${process.env['NODE_SERVICE_HOST'] ?? 'node-grpc-service:8080'}`),
 );

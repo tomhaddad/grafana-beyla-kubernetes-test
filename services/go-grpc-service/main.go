@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"net"
 
@@ -27,7 +26,7 @@ func NewGoGrpcServiceServer() GoGrpcServiceServer {
 }
 
 func main() {
-	lis, err := net.Listen("tcp", fmt.Sprintf("localhost:%s", 8080))
+	lis, err := net.Listen("tcp", "0.0.0.0:8080")
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
