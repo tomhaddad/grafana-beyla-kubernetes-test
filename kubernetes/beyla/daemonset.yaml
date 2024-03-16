@@ -12,12 +12,9 @@ data:
     # this will provide automatic routes report while minimizing cardinality
     routes:
       unmatched: heuristic
-    # let's instrument only the docs server
     discovery:
       services:
-        - k8s_deployment_name: "^go-grpc-service$"
-        - k8s_deployment_name: "^node-grpc-service$"
-        - k8s_deployment_name: "^node-http-service$"
+        - k8s_namespace: "dev"
 ---
 apiVersion: apps/v1
 kind: DaemonSet
@@ -50,6 +47,8 @@ spec:
           env:
             - name: BEYLA_CONFIG_PATH
               value: "/config/beyla-config.yml"
+            - name: BEYLA_PRINT_TRACES
+              value: "true"
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
               valueFrom:
                 secretKeyRef:

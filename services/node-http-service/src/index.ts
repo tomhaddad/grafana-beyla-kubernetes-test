@@ -33,7 +33,7 @@ app.post(
       switch (serviceName) {
         case 'go-grpc-service':
           app.log.info('Received request for go-http-service');
-          await goGrpcClient.receive({ message: request.body.message });
+          await goGrpcClient.forward({ message: request.body.message });
           return { status: 'success' };
         case 'node-grpc-service':
           app.log.info('Received request for node-http-service');

@@ -1,4 +1,4 @@
-module go-grpc-service
+module go-grpc-service-2
 
 go 1.20
 
